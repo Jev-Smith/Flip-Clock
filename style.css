@@ -1,0 +1,72 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: black;
+    font-size: 5rem;
+}
+
+/* Styling of the containers*/
+
+.outer-clock-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    width: 60%;
+    background: rgb(51, 51, 175);
+    margin: auto;
+    position: absolute;
+    top: 33%;
+    left: 0;
+    right: 0;
+    padding: .4em;
+}
+
+.inner-clock-container{
+    width: 100%;
+    height: 100%;
+    background: rgb(95, 95, 165);
+    display: flex;
+    justify-content: space-between;
+}
+
+.date-container, .time-container{
+    background: rgb(51, 175, 98);
+}
+
+.date-container{
+    width: 31%;
+    display: flex;
+    flex-direction: column;
+}
+
+.time-container{
+    width: 68%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* Styling of the date-container's children*/
+
+.day, .date, .month{
+    background: green;
+    height: 33.3333333333%;
+    padding: .1em;
+    font-size: 3rem;
+    text-align: center;
+}
+
+/* Styling of the time-container's children*/
+
+.hour, .minute, .second{
+    background: orange;
+    width: 25%;
+    height: 70%;
+    text-align: center;
+    line-height: 1.7;
+}
