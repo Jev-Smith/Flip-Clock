@@ -17,7 +17,7 @@ function updateFlipClock(){
     let currentMinute = dateObj.getMinutes();
     let currentSecond = dateObj.getSeconds();
 
-    // Convert number returned from getDay() to the appropriate string representation
+    // Converts the number returned from getDay() to the appropriate string representation
     switch(currentDay){
         case 0: 
             currentDay = "SUN";
@@ -44,7 +44,7 @@ function updateFlipClock(){
             currentDay = "NULL";
     }
 
-    // Convert number returned from getMonth() to the appropriate string representation
+    // Converts the number returned from getMonth() to the appropriate string representation
     switch(currentMonth){
         case 0: 
             currentMonth = "JAN";
@@ -86,8 +86,19 @@ function updateFlipClock(){
             currentMonth = "NULL";
     }
 
-    // Convert hour from 24 to 12
+    // Add zero in front of numbers less than 10
+    if(currentMinute < 10){
+        currentMinute = `0${currentMinute}`;
+    }
+
+    if(currentSecond < 10){
+        currentSecond = `0${currentSecond}`;
+    }
+    
+    // Converts hour from 24 to 12
     currentHour -= 12;
+    // Prevents currentHour from being a negative number when it is equal to 0
+    currentHour = Math.abs(currentHour);
 
     day.innerText = currentDay;
     date.innerText = currentDate;
