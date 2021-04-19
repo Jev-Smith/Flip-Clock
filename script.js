@@ -86,7 +86,7 @@ function updateFlipClock(){
             currentMonth = "NULL";
     }
 
-    // Add zero in front of numbers less than 10
+    // Add a zero in front of numbers less than 10
     if(currentMinute < 10){
         currentMinute = `0${currentMinute}`;
     }
@@ -94,16 +94,24 @@ function updateFlipClock(){
     if(currentSecond < 10){
         currentSecond = `0${currentSecond}`;
     }
-    
+
     // Converts hour from 24 to 12
-    currentHour -= 12;
-    // Prevents currentHour from being a negative number when it is equal to 0
-    currentHour = Math.abs(currentHour);
+    if(currentHour == 0){
+        hour.innerHTML = `${currentHour + 12}<sub>AM</sub>`;
+    }
+    else if(currentHour < 12 && currentMinute <= 59){
+        hour.innerHTML = `${currentHour}<sub>AM</sub>`;
+    }
+    else if(currentHour == 12){
+        hour.innerHTML = `${currentHour}<sub>PM</sub>`;
+    }
+    else if(currentHour > 12){
+        hour.innerHTML = `${currentHour - 12}<sub>PM</sub>`;
+    }
 
     day.innerText = currentDay;
     date.innerText = currentDate;
     month.innerText = currentMonth;
-    hour.innerText = currentHour;
     minute.innerText = currentMinute;
     second.innerText = currentSecond;
 }
