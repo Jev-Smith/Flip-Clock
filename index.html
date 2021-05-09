@@ -5,22 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
     <title>Flip Clock</title>
 </head>
 <body>
     <div class="outer-clock-container">
         <div class="inner-clock-container">
             <div class="date-container">
-                <div class="day"></div>
-                <div class="date"></div>
-                <div class="month"></div>
+                <div class="day date-time-bg"></div>
+                <div class="date date-time-bg"></div>
+                <div class="month date-time-bg"></div>
             </div>
             <div class="time-container">
-                 <div class="hour"></div>
-                 :
-                 <div class="minute"></div>
-                 :
-                 <div class="second"></div>
+                <div class="hour date-time-bg">
+                    <div class="hour-number"></div>
+                </div>
+
+                <div class="colon">:</div>
+
+                <div class="minute date-time-bg">
+                    <div class="minute-number"></div>
+                </div>
+
+                <div class="colon">:</div>
+
+                <div class="second date-time-bg">
+                    <div class="second-number"></div>
+                </div>
             </div>
         </div>
     </div>

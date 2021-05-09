@@ -3,9 +3,9 @@
 const day = document.querySelector(".day");
 const date = document.querySelector(".date");
 const month = document.querySelector(".month");
-const hour = document.querySelector(".hour");
-const minute = document.querySelector(".minute");
-const second = document.querySelector(".second");
+const hour = document.querySelector(".hour-number");
+const minute = document.querySelector(".minute-number");
+const second = document.querySelector(".second-number");
 
 function updateFlipClock(){
     let dateObj = new Date();
