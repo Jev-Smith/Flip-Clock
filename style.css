@@ -17,8 +17,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 239px;
+    max-height: 266px;
     height: 40%;
     width: 60%;
+    min-width: 800px;
+    max-width: 821px;
     background: #006EAD;
     margin: auto;
     position: absolute;
@@ -26,6 +30,7 @@ body{
     left: 0;
     right: 0;
     padding: .4em;
+    border-radius: 20px;
 }
 
 .inner-clock-container{
@@ -46,7 +51,7 @@ body{
 }
 
 .time-container{
-    width: 69%;
+    width: 68%;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -73,6 +78,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 15px;
 }
 
 .hour-number, .minute-number, .second-number{
