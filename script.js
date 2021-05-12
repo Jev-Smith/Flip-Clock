@@ -3,9 +3,9 @@
 const day = document.querySelector(".day");
 const date = document.querySelector(".date");
 const month = document.querySelector(".month");
-const hour = document.querySelector(".hour");
-const minute = document.querySelector(".minute");
-const second = document.querySelector(".second");
+const hour = document.querySelector(".hour-number");
+const minute = document.querySelector(".minute-number");
+const second = document.querySelector(".second-number");
 
 function updateFlipClock(){
     let dateObj = new Date();
@@ -17,7 +17,7 @@ function updateFlipClock(){
     let currentMinute = dateObj.getMinutes();
     let currentSecond = dateObj.getSeconds();
 
-    // Convert number returned from getDay() to the appropriate string representation
+    // Converts the number returned from getDay() to the appropriate string representation
     switch(currentDay){
         case 0: 
             currentDay = "SUN";
@@ -44,7 +44,7 @@ function updateFlipClock(){
             currentDay = "NULL";
     }
 
-    // Convert number returned from getMonth() to the appropriate string representation
+    // Converts the number returned from getMonth() to the appropriate string representation
     switch(currentMonth){
         case 0: 
             currentMonth = "JAN";
@@ -86,13 +86,32 @@ function updateFlipClock(){
             currentMonth = "NULL";
     }
 
-    // Convert hour from 24 to 12
-    currentHour -= 12;
+    // Add a zero in front of numbers less than 10
+    if(currentMinute < 10){
+        currentMinute = `0${currentMinute}`;
+    }
+
+    if(currentSecond < 10){
+        currentSecond = `0${currentSecond}`;
+    }
+
+    // Converts hour from 24 to 12
+    if(currentHour == 0){
+        hour.innerHTML = `${currentHour + 12}<sub>AM</sub>`;
+    }
+    else if(currentHour < 12 && currentMinute <= 59){
+        hour.innerHTML = `${currentHour}<sub>AM</sub>`;
+    }
+    else if(currentHour == 12){
+        hour.innerHTML = `${currentHour}<sub>PM</sub>`;
+    }
+    else if(currentHour > 12){
+        hour.innerHTML = `${currentHour - 12}<sub>PM</sub>`;
+    }
 
     day.innerText = currentDay;
     date.innerText = currentDate;
     month.innerText = currentMonth;
-    hour.innerText = currentHour;
     minute.innerText = currentMinute;
     second.innerText = currentSecond;
 }

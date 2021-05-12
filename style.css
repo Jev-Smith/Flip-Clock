@@ -5,8 +5,10 @@
 }
 
 body{
-    background: black;
+    background: rgb(221, 221, 221);
     font-size: 5rem;
+    font-family: 'Rubik', sans-serif;
+    color: rgb(221, 221, 221);
 }
 
 /* Styling of the containers*/
@@ -15,27 +17,31 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 239px;
+    max-height: 266px;
     height: 40%;
     width: 60%;
-    background: rgb(51, 51, 175);
+    min-width: 800px;
+    max-width: 821px;
+    background: #006EAD;
     margin: auto;
     position: absolute;
     top: 33%;
     left: 0;
     right: 0;
     padding: .4em;
+    border-radius: 20px;
 }
 
 .inner-clock-container{
     width: 100%;
     height: 100%;
-    background: rgb(95, 95, 165);
     display: flex;
     justify-content: space-between;
 }
 
-.date-container, .time-container{
-    background: rgb(51, 175, 98);
+.time-container{
+    background: #45ABE6;
 }
 
 .date-container{
@@ -51,10 +57,13 @@ body{
     justify-content: space-around;
 }
 
+.date-time-bg{
+    background: rgb(19, 18, 18);
+}
+
 /* Styling of the date-container's children*/
 
 .day, .date, .month{
-    background: green;
     height: 33.3333333333%;
     padding: .1em;
     font-size: 3rem;
@@ -64,9 +73,22 @@ body{
 /* Styling of the time-container's children*/
 
 .hour, .minute, .second{
-    background: orange;
     width: 25%;
     height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.hour-number, .minute-number, .second-number{
     text-align: center;
-    line-height: 1.7;
+}
+
+sub{
+    font-size: .25em;
+}
+
+.colon{
+    color: rgb(0, 0, 0);
 }
